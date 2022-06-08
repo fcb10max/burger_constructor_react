@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import burgerBg from "../../assets/png/burger_bg.png";
 
 export const Container = styled.div`
   width: 90%;
@@ -26,19 +27,52 @@ export const Container = styled.div`
   }
 
   .top > .center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: url(${burgerBg}) no-repeat center center;
+    background-size: contain;
     position: relative;
-    img#main_img {
-      position: relative;
-      z-index: 1;
-      width: 100%;
+
+    &.active::after {
+      display: block;
     }
-    img.ingredient {
+
+    ::after {
+      content: "🤯 You are sure?";
       position: absolute;
-      left: 55px;
+      top: 50px;
+      right: 50px;
+      background: #fff;
+      border-radius: 50px;
+      padding: 10px;
+      color: #1f2939;
+      width: 150px;
+      height: 20px;
+      font-size: 16px;
+      text-align: center;
+      display: none;
+    }
+
+    & > img#burgerBottom {
+      position: absolute;
+      width: 230px;
+      height: auto;
+      left: 80px;
       bottom: 0;
+    }
+    & > img.ingredient,
+    & > span {
+      width: 230px;
+      height: auto;
+      position: absolute;
+      left: 80px;
+      max-height: 60px;
+    }
+
+    span > img {
+      width: 100px;
+      height: auto;
+      position: relative;
     }
   }
 
@@ -101,7 +135,7 @@ export const Container = styled.div`
     background-color: #f5f5ff;
     border-radius: 32px;
     padding: 16px;
-    
+
     & > div {
       display: flex;
       align-items: center;
