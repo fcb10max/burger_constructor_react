@@ -1,5 +1,5 @@
 import { Link, Route, Routes } from "react-router-dom";
-import "./app.css";
+import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { useEffect, useRef, useState } from "react";
