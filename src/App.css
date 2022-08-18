@@ -8,7 +8,7 @@
 
 .mobileMenuWindow {
   width: 100vw;
-  height: 85vh;
+  height: 88vh;
   position: fixed;
   top: -200%;
   left: 0;
@@ -20,7 +20,7 @@
   transition: top 0.5s linear;
 }
 .mobileMenuWindow.active {
-  top: 15%;
+  top: 12%;
 }
 
 .mobileMenuWrapper {
