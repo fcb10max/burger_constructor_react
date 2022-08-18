@@ -34,4 +34,8 @@ export const Container = styled.div`
   .right > i {
     margin-right: 10px;
   }
+
+  @media (max-width: 800px) {
+    display: none;
+  }
 `;

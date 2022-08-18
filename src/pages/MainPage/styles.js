@@ -24,12 +24,13 @@ export const Container = styled.div`
 
   .right {
     flex: 1;
-    width: 60%;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
 
     img {
-      width: auto;
-      max-height: 600px;
-      height: 70vh;
+      width: 100%;
+      height: auto;
     }
   }
 
@@ -46,12 +47,18 @@ export const Container = styled.div`
     background-color: #5243c2;
     text-decoration: none;
     cursor: pointer;
-    transition: transform 0.3s linear, background-color 0.3s linear;
+    /* transition: transform 0.5s cubic-bezier(.79,2.18,0,0), */
+    transition: transform 0.5s cubic-bezier(0.65, 1.95, 0.03, 0.32),
+      background-color 0.3s linear;
+
+    p {
+      font-size: 10px;
+      font-family: monospace;
+    }
 
     &:hover {
-      background-color: #3b318a;
-      transform: scale(1.2);
-      transform-origin: center;
+      transform: scale(1.3);
+      background-color: #473AA6;
     }
 
     p {

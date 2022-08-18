@@ -2,7 +2,55 @@
   margin: 0 auto;
   padding: 0;
   max-width: 1440px;
+  width: 100%;
+  position: relative;
+}
+
+.mobileMenuWindow {
   width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
+  height: 85vh;
+  position: fixed;
+  top: -200%;
+  left: 0;
+  flex-direction: column;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  transition: top 0.5s linear;
+}
+.mobileMenuWindow.active {
+  top: 15%;
+}
+
+.mobileMenuWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobileMenuWrapper > .links {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.mobileMenuWrapper > .links > a {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #1f2939;
+  padding-bottom: 20px;
+}
+.mobileMenuWrapper > .links > a:hover {
+  font-weight: 600;
+  border-bottom: 1px solid #5243c2;
+}
+
+.mobileMenuWrapper > .links > a:first-child {
+  margin-bottom: 40px;
 }
