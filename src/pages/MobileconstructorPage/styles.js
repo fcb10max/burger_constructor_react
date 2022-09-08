@@ -126,14 +126,14 @@ export const Main = styled.div`
           justify-content: center;
           align-items: center;
           font-size: 20px;
-          color: #5243c2;
+          color: ${props => props.isTopBunPut ? `#949BA6` : `#5243C2`};
           background-color: #f5f5ff;
           border-radius: 50%;
           cursor: pointer;
           transition: background-color 0.3s linear, color 0.3s linear;
 
           :hover {
-            background-color: #5243c2;
+            background-color: ${props => props.isTopBunPut ? `#949BA6` : `#5243C2`};
             color: #f5f5ff;
           }
         }
@@ -156,8 +156,16 @@ export const Main = styled.div`
     border-radius: 99px;
     transition: background-color 0.3s linear;
 
+    &.cancel {
+      background-color: red;
+    }
+
     :hover {
       background-color: #473aa6;
+
+      &.cancel {
+        background-color: #ff4d4f;
+      }
     }
   }
 

@@ -7,10 +7,11 @@ import MainPage from "./pages/MainPage";
 import BurgerConstructorPage from "./pages/BurgerConstructorPage";
 import MobileMainPAge from "./pages/MobileMainPage";
 import MobileConstructorPage from "./pages/MobileconstructorPage";
-import { ingredients, data } from "./modules/getIngredients";
+import { ingredients } from "./modules/getIngredients";
 
 function App() {
   const [mobileMenuActive, setMobileMenuActive] = useState(false);
+  const [isTopBunPut, setIsTopBunPut] = useState(false);
   const ref = useRef();
 
   useEffect(() => {
@@ -40,9 +41,7 @@ function App() {
   });
 
   return (
-    <div
-      className="app"
-    >
+    <div className="app">
       <Header
         setMoblieMenuActive={setMobileMenuActive}
         mobileMenuActive={mobileMenuActive}
@@ -73,6 +72,8 @@ function App() {
           path="/constructor"
           element={
             <BurgerConstructorPage
+              setIsTopBunPut={setIsTopBunPut}
+              isTopBunPut={isTopBunPut}
               ingredients={ingredients}
               data={data}
               setData={setData}
@@ -84,6 +85,8 @@ function App() {
           path="/mobile/constructor"
           element={
             <MobileConstructorPage
+              setIsTopBunPut={setIsTopBunPut}
+              isTopBunPut={isTopBunPut}
               ingredients={ingredients}
               data={data}
               setData={setData}

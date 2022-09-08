@@ -10,8 +10,7 @@ export const HeaderComponent = styled.div`
   
   .wrapper {
     width: 90%;
-    margin: 0 auto;
-    padding: 30px 0;
+    margin: 30px auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -87,6 +86,10 @@ export const HeaderComponent = styled.div`
   }
 
   @media (max-width: 800px) {
+    .wrapper {
+      height: 100%;
+      margin: 0 auto;
+    }
     .right > button {
       margin: 0;
     }

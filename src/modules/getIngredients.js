@@ -7,9 +7,30 @@ import cucumber from "./../assets/png/cucumber.png";
 import cheese from "./../assets/png/cheese.png";
 import salad from "./../assets/png/salad.png";
 import bun from "./../assets/png/bun_middle.png";
+import top_bun from "./../assets/png/bun_top.png";
 
 export const ingredients = [
   {
+    isExcluded: true,
+    name: "top_bun",
+    weight: 5,
+    time: 1,
+    kcal: 75,
+    image: top_bun,
+    price: 3,
+    isSingleElem: true,
+    cssValues: {
+      height: 120,
+      mobileHeight: 70,
+      bottomDifference: 40,
+      mobileBottomDifference: 20,
+      initialBottomDifference: 0,
+      mobileInitialBottomDifference: 10,
+    },
+  },
+
+  {
+    isExcluded: false,
     name: "cutlet",
     weight: 4.5,
     time: 5,
@@ -23,10 +44,11 @@ export const ingredients = [
       bottomDifference: 40,
       mobileBottomDifference: 20,
       initialBottomDifference: 0,
-      mobileInitialBottomDifference: 5
+      mobileInitialBottomDifference: 5,
     },
   },
   {
+    isExcluded: false,
     name: "mayo",
     weight: 2,
     time: 1,
@@ -40,10 +62,11 @@ export const ingredients = [
       bottomDifference: 55,
       mobileBottomDifference: 27,
       initialBottomDifference: 15,
-      mobileInitialBottomDifference: 15
+      mobileInitialBottomDifference: 15,
     },
   },
   {
+    isExcluded: false,
     name: "onion",
     weight: 0.2,
     time: 0.5,
@@ -57,10 +80,11 @@ export const ingredients = [
       bottomDifference: 20,
       mobileBottomDifference: 10,
       initialBottomDifference: -20,
-      mobileInitialBottomDifference: -5
+      mobileInitialBottomDifference: -5,
     },
   },
   {
+    isExcluded: false,
     name: "tomato",
     weight: 0.3,
     time: 0.5,
@@ -74,10 +98,11 @@ export const ingredients = [
       bottomDifference: 20,
       mobileBottomDifference: 10,
       initialBottomDifference: -20,
-      mobileInitialBottomDifference: -5
+      mobileInitialBottomDifference: -5,
     },
   },
   {
+    isExcluded: false,
     name: "cucumber",
     weight: 0.3,
     time: 0.5,
@@ -91,10 +116,11 @@ export const ingredients = [
       bottomDifference: 20,
       mobileBottomDifference: 10,
       initialBottomDifference: -20,
-      mobileInitialBottomDifference: -5
+      mobileInitialBottomDifference: -5,
     },
   },
   {
+    isExcluded: false,
     name: "cheese",
     weight: 1,
     time: 1,
@@ -108,10 +134,11 @@ export const ingredients = [
       bottomDifference: 80,
       mobileBottomDifference: 35,
       initialBottomDifference: 30,
-      mobileInitialBottomDifference: 25
+      mobileInitialBottomDifference: 25,
     },
   },
   {
+    isExcluded: false,
     name: "salad",
     weight: 1.5,
     time: 0.5,
@@ -125,10 +152,11 @@ export const ingredients = [
       bottomDifference: 50,
       mobileBottomDifference: 25,
       initialBottomDifference: 0,
-      mobileInitialBottomDifference: 10
+      mobileInitialBottomDifference: 10,
     },
   },
   {
+    isExcluded: false,
     name: "bun",
     weight: 5,
     time: 1,
@@ -142,7 +170,7 @@ export const ingredients = [
       bottomDifference: 40,
       mobileBottomDifference: 20,
       initialBottomDifference: 0,
-      mobileInitialBottomDifference: 10
+      mobileInitialBottomDifference: 10,
     },
   },
 ];

@@ -4,12 +4,12 @@ import { SingleElem, Main, MultipleElem } from "./styles";
 const Center = ({ ingredients, data, isMobile = false }) => {
   const [renderData, setRenderData] = useState([]);
 
-  const updateBurger = () => {
+  useEffect(() => {
     if (!data.length) return setRenderData([]);
     const objArr = [];
     let lastHeight = 0;
     data.reduce((prevValue, currValue, ind) => {
-      const prevIngData = ingredients.find((el) => el.name === prevValue);
+      // const prevIngData = ingredients.find((el) => el.name === prevValue);
       const currIngData = ingredients.find((el) => el.name === currValue);
       const obj = {
         name: currValue,
@@ -56,10 +56,6 @@ const Center = ({ ingredients, data, isMobile = false }) => {
       return currValue;
     }, data[0]);
     setRenderData(objArr);
-  };
-
-  useEffect(() => {
-    updateBurger();
   }, [data]);
 
   return (

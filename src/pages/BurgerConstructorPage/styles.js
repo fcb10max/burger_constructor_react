@@ -82,14 +82,15 @@ export const Main = styled.div`
           justify-content: center;
           align-items: center;
           font-size: 20px;
-          color: #5243C2;
+          color: ${props => props.isTopBunPut ? `#949BA6` : `#5243C2`};
+          /* color: #5243C2; */
           background-color: #F5F5FF;
           border-radius: 50%;
           cursor: pointer;
           transition: background-color 0.3s linear, color 0.3s linear;
 
           :hover {
-            background-color: #5243C2;
+            background-color: ${props => props.isTopBunPut ? `#949BA6` : `#5243C2`};
             color: #F5F5FF;
           }
         }

@@ -4,16 +4,26 @@ import kcalIcon from "../../../../assets/svg/fire.svg";
 import timeIcon from "../../../../assets/svg/clock.svg";
 import weightIcon from "../../../../assets/svg/bag.svg";
 
-const Right = ({ data }) => {
+const Right = ({ data, setIsTopBunPut, isTopBunPut }) => {
+  const checkoutHandler = (e) => {
+    if (!isTopBunPut) return setIsTopBunPut(true);
+    // there will be checkout function;
+    alert("Checkout completed");
+  };
 
   return (
-    <Main>
+    <Main isTopBunPut={isTopBunPut}>
       <div className="wrapper">
         <h1>Summary</h1>
         <hr />
         <div className="priceAndCheckoutBlock">
           <p className="price">{Number(data.price).toFixed(2)} $</p>
-          <button>Checkout</button>
+          <button onClick={checkoutHandler}>
+            {isTopBunPut ? "Checkout" : "Put top bun and checkout"}
+          </button>
+          {isTopBunPut && (
+            <button className="close" onClick={() => setIsTopBunPut(false)}>Cancel</button>
+          )}
         </div>
         <p>
           Build a <span>$10</span> Burger and Get a Gift

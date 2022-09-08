@@ -50,8 +50,15 @@ export const Main = styled.div`
       border-radius: 99px;
       transition: background-color 0.3s linear;
 
+      &.close {
+        background-color: red;
+      }
+      
       :hover {
         background-color: #473AA6;
+        &.close {
+          background-color: #ff4d4f;
+        }
       }
     }
   }
