@@ -48,8 +48,8 @@ export const SingleElem = styled.div`
   z-index: 2;
   bottom: ${(props) =>
     props.isFirstElem
-      ? `${70 - Number(props.cssValues.initialBottomDifference)}px`
-      : `${70 + Number(props.cssValues.bottom)}px`};
+      ? `${Number(props.cssValues.initialBottom)}px`
+      : `${Number(props.cssValues.bottom)}px`};
   img {
     width: 100%;
     height: ${(props) => `${props.cssValues.height}px`};
@@ -69,8 +69,8 @@ export const MultipleElem = styled.div`
   z-index: 2;
   bottom: ${(props) =>
     props.isFirstElem
-      ? `${70 - Number(props.cssValues.initialBottomDifference)}px`
-      : `${70 + Number(props.cssValues.bottom)}px`};
+      ? `${Number(props.cssValues.initialBottom)}px`
+      : `${Number(props.cssValues.bottom)}px`};
   img {
     width: 35%;
     height: ${(props) => `${props.cssValues.height}px`};

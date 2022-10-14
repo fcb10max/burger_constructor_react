@@ -8,53 +8,42 @@ const Center = ({ ingredients, data, isMobile = false }) => {
     if (!data.length) return setRenderData([]);
     const objArr = [];
     let lastHeight = 0;
-    data.reduce((prevValue, currValue, ind) => {
-      // const prevIngData = ingredients.find((el) => el.name === prevValue);
+    data.forEach((currValue) => {
       const currIngData = ingredients.find((el) => el.name === currValue);
+
+      if (objArr.length > 1) {
+        !isMobile
+          ? (lastHeight =
+              objArr[objArr.length - 1].cssValues.bottom +
+              objArr[objArr.length - 1].cssValues.height)
+          : (lastHeight =
+              objArr[objArr.length - 1].cssValues.bottom +
+              objArr[objArr.length - 1].cssValues.mobileHeight);
+      } else if (objArr.length === 1) {
+        !isMobile
+          ? (lastHeight =
+              objArr[objArr.length - 1].cssValues.initialBottom +
+              objArr[objArr.length - 1].cssValues.height)
+          : (lastHeight =
+              objArr[objArr.length - 1].cssValues.mobileInitialBottom +
+              objArr[objArr.length - 1].cssValues.mobileHeight);
+      }
       const obj = {
         name: currValue,
         image: currIngData.image,
         isSingleElement: currIngData.isSingleElem,
         cssValues: {
           ...currIngData.cssValues,
-          bottom: isMobile
-            ? Number(lastHeight) -
-              Number(currIngData.cssValues.mobileBottomDifference)
-            : Number(lastHeight) -
-              Number(currIngData.cssValues.bottomDifference),
-          initialBottomDifference: isMobile
-            ? Number(currIngData.cssValues.mobileInitialBottomDifference)
-            : Number(currIngData.cssValues.initialBottomDifference),
+          bottom: !isMobile
+            ? Number(lastHeight - currIngData.cssValues.bottomDifference)
+            : Number(lastHeight - currIngData.cssValues.mobileBottomDifference),
+          initialBottom: !isMobile
+            ? Number(currIngData.cssValues.initialBottom)
+            : Number(currIngData.cssValues.mobileInitialBottom),
         },
       };
       objArr.push(obj);
-      if (isMobile) {
-        // add object's height
-        lastHeight += currIngData.cssValues.mobileHeight;
-        if (ind === 0 && obj.isSingleElement) {
-          // if first ingredient is single part(not sliced) ingredient
-          // then add initialBottomDifference to lastHeight
-          lastHeight -= currIngData.cssValues.mobileInitialBottomDifference;
-        }
-        if (ind === 0 && !obj.isSingleElement) {
-          // if first ingredient is multi part(sliced) ingredient
-          // then remove initialBottomDifference from lastHeight
-          lastHeight -= currIngData.cssValues.mobileInitialBottomDifference;
-        }
-        if (ind > 0 && obj.isSingleElement)
-          lastHeight -= obj.cssValues.mobileBottomDifference;
-        if (ind > 0 && !obj.isSingleElement)
-          lastHeight -= obj.cssValues.mobileBottomDifference;
-      } else if (!isMobile) {
-        lastHeight += currIngData.cssValues.height;
-        if (ind === 0 && obj.isSingleElement)
-          lastHeight += currIngData.cssValues.initialBottomDifference;
-        if (ind === 0 && !obj.isSingleElement)
-          lastHeight -= currIngData.cssValues.initialBottomDifference;
-        if (ind > 0) lastHeight -= currIngData.cssValues.bottomDifference;
-      }
-      return currValue;
-    }, data[0]);
+    });
     setRenderData(objArr);
   }, [data]);
 
