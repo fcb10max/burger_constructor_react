@@ -61,8 +61,8 @@ export const ingredients = [
       mobileHeight: 40,
       bottomDifference: 55,
       mobileBottomDifference: 27,
-      initialBottomDifference: 15,
-      mobileInitialBottomDifference: 15,
+      initialBottomDifference: 0,
+      mobileInitialBottomDifference: 0,
     },
   },
   {
